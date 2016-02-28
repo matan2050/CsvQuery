@@ -1,0 +1,5 @@
+﻿27-2-16
+=======
+
+1. Add trimming of name
+2. Encapsulate query input from console into new class
