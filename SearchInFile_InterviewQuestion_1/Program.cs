@@ -13,9 +13,19 @@ namespace SearchInFile_InterviewQuestion_1
         {
             Console.Clear();
 
+			// Check input argument
+			if (args.Length == 0)
+			{
+				Console.WriteLine("Missing Csv Path");
+				return;
+			}
+
+			string path = @args[0];
+
+
             // Get number of logical processors, for future multithreading
             Console.WriteLine("Available cores {0}", Environment.ProcessorCount);
-            string path = @"C:\Temp\simulationCsv - Copy.csv";
+            //string path = @"C:\Temp\simulationCsv - Copy.csv";
 
 			Stopwatch timer = new Stopwatch();
 			timer.Start();

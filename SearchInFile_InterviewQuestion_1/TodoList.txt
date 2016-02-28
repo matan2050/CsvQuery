@@ -1,8 +1,5 @@
 ﻿27-2-16
 =======
 
-1. Remove hard-coded filename, add abilitry to run independently
-2. Encapsulate query input from console into new class
-3. Think of ways to improve efficiency using multithreaded methods
-4. After query return aprroximate time of query
-5. After loading csv add approximate time of initialization of class
+1. Encapsulate query input from console into new class
+2. Think of ways to improve efficiency using multithreaded methods
