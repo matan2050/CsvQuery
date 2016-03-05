@@ -1,5 +1,0 @@
-﻿27-2-16
-=======
-
-1. Encapsulate query input from console into new class
-2. Think of ways to improve efficiency using multithreaded methods
