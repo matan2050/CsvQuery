@@ -8,10 +8,7 @@ namespace SearchInFile_InterviewQuestion_1
     {
         static void Main(string[] args)
         {
-            args = new string[2];
-            args[0] = @"C:\Users\User\Desktop\InterviewQuestions\simulation.csv";
-            args[1] = "/t";
-            IOHandeObject runInstance = new IOHandeObject(args);
+            IOHandeObject runInstance = new IOHandeObject(ref args);
             runInstance.ProcessQueries();        
         }
     }

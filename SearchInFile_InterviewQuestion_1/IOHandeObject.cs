@@ -17,7 +17,7 @@ namespace SearchInFile_InterviewQuestion_1
 
 
         #region CONSTRUCTORS
-        public IOHandeObject(string[] inputArgs)
+        public IOHandeObject(ref string[] inputArgs)
         {
             timeOperations = false;
             keepQuerying = true;
@@ -28,6 +28,7 @@ namespace SearchInFile_InterviewQuestion_1
             if (inputArgs.Length == 0)
             {
                 Console.WriteLine("Missing Csv Path");
+                keepQuerying = false;
                 return;
             }
 
@@ -50,6 +51,7 @@ namespace SearchInFile_InterviewQuestion_1
 
             csvToQuery = new CsvIndexer(pathToCsv);
             csvToQuery.Index();
+            Console.WriteLine("Finished loading {0}", pathToCsv);
 
             if (timeOperations)
             {
@@ -65,13 +67,13 @@ namespace SearchInFile_InterviewQuestion_1
         #region PUBLIC_METHODS
         public void ProcessQueries()
         {
-            Console.WriteLine("Enter email or name for querying:");
-
             string      query;
             TimeSpan    timeToQuery;
 
             while (keepQuerying)
             {
+                Console.WriteLine("Enter email or name for querying:");
+
                 query = Console.ReadLine();
 
                 if (query == "exit")
