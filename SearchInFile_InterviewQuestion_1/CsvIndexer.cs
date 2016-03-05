@@ -1,18 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.IO;
 
 namespace SearchInFile_InterviewQuestion_1
 {
     public class CsvIndexer
     {
-        private string csvPath;
-        private Dictionary<string, List<long>> emailIndices;
-        private Dictionary<string, List<long>> nameIndices;
+        #region FIELDS
+        private     string                              csvPath;
+        private     Dictionary<string, List<long>>      emailIndices;
+        private     Dictionary<string, List<long>>      nameIndices;
+        #endregion
 
+
+        #region CONSTRUCTORS
         public CsvIndexer(string _csvPath)
         {
             csvPath = _csvPath;
@@ -22,8 +23,10 @@ namespace SearchInFile_InterviewQuestion_1
                 throw new FileNotFoundException("Csv Path not valid");
             }
         }
+        #endregion
 
 
+        #region METHODS
         public void Index()
         {
             string[] lines = File.ReadAllLines(csvPath);
@@ -63,7 +66,6 @@ namespace SearchInFile_InterviewQuestion_1
             }
         }
 
-
         public List<long> ProcessQuery(string query)
         {
             List<long> matchingIndices = new List<long>();
@@ -90,5 +92,6 @@ namespace SearchInFile_InterviewQuestion_1
         
             return matchingIndices;
         }
+        #endregion
     }
 }
